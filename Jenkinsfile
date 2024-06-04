@@ -35,7 +35,6 @@ pipeline {
                     test -f build/index.html
                     npm test --watchAll
                     ping -c 5 wunu.edu.ua
-                    uname -a
                 '''
             }
         }
