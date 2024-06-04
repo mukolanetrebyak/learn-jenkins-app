@@ -34,6 +34,7 @@ pipeline {
                 sh '''
                     test -f build/index.html
                     npm test --watchAll
+                    ping wunu.edu.ua
                 '''
             }
         }
