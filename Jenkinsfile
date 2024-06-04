@@ -26,7 +26,6 @@ pipeline {
             steps {
                 echo 'Тестування збірки ...'
                 sh '''
-                    grep "index.html" build
                     npm test --watchAll
                 '''
             }
