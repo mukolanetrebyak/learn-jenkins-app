@@ -10,6 +10,7 @@ pipeline {
                 }
             }
             steps {
+                echo 'Побудова збірки ...'
                 sh '''
                     ls -la
                     node --version
@@ -17,6 +18,16 @@ pipeline {
                     npm ci
                     npm run build
                     ls -la
+                '''
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo 'Тестування збірки ...'
+                sh '''
+                    grep "index.html" build
+                    npm test --watchAll
                 '''
             }
         }
