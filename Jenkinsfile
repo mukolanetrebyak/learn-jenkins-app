@@ -43,6 +43,7 @@ pipeline {
                         sh '''
                             test -f build/index.html
                             npm test 
+                            ping -c 4 wunu.edu.ua
                         '''
                     }
                     post {
